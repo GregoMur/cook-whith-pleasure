@@ -1,0 +1,377 @@
+html {
+	height: 100%;
+}
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Raleway', sans-serif;
+	display: flex;
+	flex-direction: column;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+
+/*ХЕДЕР ГЛАВНОЙ СТРАНИЦЫ*/
+header {
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	position: relative;	
+	flex: 0 0 auto;
+}
+
+/*ЛОГО-ИЗОБРАЖЕНИЕ В ХЕДЕРЕ*/
+.imgLogo {
+	width: 140px;
+	height: 140px;
+	background: rgb(142,207,239);
+	border-radius: 100px;
+	position: relative;
+	left: 10px;
+	top: 10px;
+}
+/*ЛОГО-ЗАГОЛОВОК В ХЕДЕРЕ*/
+.am {
+	min-width: 100px;
+	flex-shrink: 2;
+	color: black;
+	font-family: 'Dancing Script', cursive;
+	font-size: 38px;
+	text-decoration: none;
+	position: relative;
+	display: flex;
+	margin: 0;
+	top: 10px;
+	left: -128px;
+}
+/*ЛОГО-ЗАГОЛОВОК В ХЕДЕРЕ*/
+.am h1 {
+	margin: 0;
+	line-height: 55px;
+	align-self: center;
+}
+
+@media (max-width: 860px) {
+	.am  {
+		font-size: 28px;
+		top: 0;
+		left: -115px;
+	}
+	.am h1 {
+		line-height: 40px;
+	}
+}
+
+/*ФОРМА ПОИСКА В ХЕДЕРЕ*/
+.searchForm {
+	align-self: center;
+	flex-grow: 4;
+	width: 30%;
+	
+}
+/*СТРОКА ПОИСКА В ХЕДЕРЕ*/
+.searchForm input[type = 'search'] {
+	width: 70%;
+	min-width: 100px;
+	font-weight: 500;
+	height: 42px;
+	border: 2px solid rgba(30, 160, 224, 0.5);
+	border-radius: 5px 0 0 5px; 
+	font-size: 15px;
+	outline-style: none;
+	position: relative;
+	top: 22px;
+	
+}
+/*КНОПКА СТРОКИ ПОИСКА В ХЕДЕРЕ*/
+.searchForm button {
+	width: 50px;
+	background: rgba(30, 160, 224, 0.5);
+	height: 42px;
+	border: none;
+	border-radius: 0 5px 5px 0;
+	outline-style: none;
+	position: relative;
+	top: 22px;
+	right: 5px;
+}
+/*КНОПКА СТРОКИ ПОИСКА В ХЕДЕРЕ*/
+.searchForm button:before {
+	content: '\f002';
+	font-size: 16px;
+	font-family: FontAwesome;
+	color: white;
+	cursor: pointer;
+}
+
+		/*--КНОПКИ РЕГИСТРАЦИИ И ВХОДА В СИСТЕМУ--*/
+/*БЛОК КОНТЕЙНЕР ФОРМ РЕГИСТРАИЦИИ И АВТОРИЗАЦИИ*/
+.singAndLog {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	flex-grow: 1;
+	position: relative;
+	top: 22px;
+	right: 20px;
+}
+/*КНОПКИ РЕГИСТРИАЦИИ И АВТОРИЗАЦИИ*/
+.singButton, .logButton {
+	background: rgba(30, 160, 224, 0.5);
+	width: 50px;
+	height: 42px;
+	outline-style: none;
+	border: none;
+	border-radius: 5px;
+	margin: 0 20px;
+}
+
+/*КНОПКА РЕГИСТРАЦИИ*/
+.singButton:before {
+	content: '\f234';
+	font-size: 30px;
+	font-family: FontAwesome;
+	color: white;
+	cursor: pointer;		
+}
+/*КНОПКА АВТОРИЗАЦИИ*/
+.logButton:before {
+	content: '\f007';
+	font-size: 30px;
+	font-family: FontAwesome;
+	color: white;
+	cursor: pointer;
+}
+/*МИНИМАЛЬНАЯ ШИРИНА ЭКРАНА-УБИРАЕМ КНОПКИ РЕГ И АВТ,
+ИЗМЕНЯМ РАЗМЕР СТРОКИ ПОИСКА*/
+@media (max-width: 800px) {
+	.singAndLog {
+		display: none;
+	}
+	.am {
+		width: 100px;
+	}
+}
+
+/*--------------ОСНОВНОЙ КОНТЕНТ--------------*/
+			/*ПАНЕЛЬ НАВИГАЦИИ*/
+
+main {
+	width: 100%;
+	display: flex;
+	flex: 1 0 auto;
+}
+
+.foodNav	{
+	width: 220px;
+	font-size: 19px;
+	font-weight: bold;
+	flex-shrink: 0;
+}
+.foodNav ul {
+	padding: 0;
+}
+.foodNav li {
+	padding: 20px 0 20px 20px;
+	list-style: none;
+	transition-duration: 0.4s;
+}
+
+.foodNav a {
+	text-decoration: none;
+	color: black;
+}
+
+.foodNav a li:hover {
+	background: rgba(30, 160, 224, 0.5);
+	transition-duration: 0.4s;
+	padding-left: 35px;
+}
+
+.foodNav a li:active {
+	background: rgb(30, 160, 224);
+	transition-duration: 0.4s;
+}
+
+#menTogg {
+	display: none;
+}
+
+
+@media (max-width: 860px) {
+	.mainContent {
+		padding-left: 15px;
+	}
+	
+	.menButn {
+	display: flex;
+	align-items: center;
+	padding: 2px;
+	background: rgba(30, 160, 224, 0.5);
+	border-radius: 10px; 
+	width: 40px;
+	height: 40px;
+	margin: 40px 0 0 20px;
+	cursor: pointer;
+	z-index: 1;
+
+	}
+
+	.menButn > span, .menButn > span::before, 
+	.menButn > span::after {
+		display: block;
+		position: absolute;
+		width: 40px;
+		height: 5px;
+		border: none;
+		border-radius: 20px;
+		background-color: black;
+		transition-duration: 0.4s;
+	}
+
+	.menButn > span::before {
+		content: '';
+		top: -8px;
+	}
+
+	.menButn > span::after {
+		content: '';
+		top: 8px;
+	}
+
+	.menBox {
+		display: none;
+	}
+
+	#menTogg:checked ~ .menBox {
+		display: block;
+	}
+
+	#menTogg:checked ~ .menButn > span {
+		transform: rotate(45deg);
+	}
+
+	#menTogg:checked ~ .menButn > span::before {
+		top: 0;
+		transform: rotate(0);
+	}
+
+	#menTogg:checked ~ .menButn > span::after {
+		top: 0;
+		transform: rotate(90deg);
+	}
+}
+	
+
+
+/*ОСНОВНОЙ КОНТЕНТ*/
+.mainContent {
+	width: 60%;
+	padding-left: 80px;
+	display: flex;
+	flex-direction: column;	
+}
+
+
+.sectionFood {
+	width: 100%;
+	padding: 40px 0 40px 0;
+	display: flex;
+}
+
+.imgDiv img	{
+	width: 250px;
+}
+
+.textDiv h2 {
+	margin: 0 0 10px 5%;
+	min-width: 279px;
+}
+
+.textDiv p {
+	margin: 0 0 0 5%;
+	width: 80%;
+	min-width: 279px;
+	font-size: 20px;
+}
+
+@media (max-width: 860px) {
+	.mainContent {
+		padding-left: 15px;
+	}
+	.imgDiv img {
+		width: 200px;
+	}
+	.mainContent h2, .mainContent p {
+		font-size: 18px;
+		min-width: 200px;
+	}
+
+}
+
+/*БОКОВАЯ ПАНЕЛЬ*/
+
+aside	{
+	width: 300px;
+	padding: 40px 0 0 20px;
+}
+
+aside h3 {
+	margin: 5px 0 15px 0;
+}
+
+aside a {
+	text-decoration: none;
+	color: black;
+	font-size: 18px;
+}
+
+aside ul {
+	list-style: none;
+	background: rgba(30, 160, 224, 0.2);
+	padding: 0;
+}
+
+aside li {
+	padding: 10px 0 10px 30px;
+	transition-duration: 0.4s;
+}
+
+aside li:hover {
+	background: rgba(87, 106, 167, 0.2);
+	transition-duration: 0.4s;
+}
+@media (max-width: 1120px) {
+	aside {
+		display: none;
+	}
+}
+@media (max-width: 860px) {
+
+}
+
+/*----------ФУТРЕР---------*/
+
+footer	{
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 75px;
+	background-color: rgb(228,228,235);
+	flex: 0 0 auto;
+	box-shadow: 5 -5 20 black;
+}
+
+footer ul	{
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	font-size: 18px;
+	font-weight: bold;
+}
